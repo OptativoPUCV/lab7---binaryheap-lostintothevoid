@@ -32,7 +32,7 @@ void swap(Heap* pq){
       pq->heapArray[k] = aux->heapArray[0];
     }
     else{ 
-      if (pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority){
+      if (pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority && (darthvader-1)/2){
         aux->heapArray[0] = pq->heapArray[(darthvader-1)/2];
         pq->heapArray[(darthvader-1)/2]=pq->heapArray[k];
         pq->heapArray[k] = aux->heapArray[0]; 
