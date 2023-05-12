@@ -22,22 +22,21 @@ void* heap_top(Heap* pq){
   else return pq->heapArray[0].data;
 }
 
-void swap(Heap* pq){
+void swap(Heap* pq, int caso){
   Heap* aux=createHeap();
   int darthvader=(pq->size-1)/2;
   for(int k=pq->size; k!=0; k--){
-    if(pq->heapArray[k].priority>pq->heapArray[(k-1)/2].priority){
+    if(pq->heapArray[k].priority>pq->heapArray[(k-1)/2].priority && caso==0){
       aux->heapArray[0] = pq->heapArray[(k-1)/2];
       pq->heapArray[(k-1)/2]=pq->heapArray[k];
       pq->heapArray[k] = aux->heapArray[0];
     }
-    else{ 
-      if (pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority && (darthvader-1)/2){
-        aux->heapArray[0] = pq->heapArray[(darthvader-1)/2];
-        pq->heapArray[(darthvader-1)/2]=pq->heapArray[k];
-        pq->heapArray[k] = aux->heapArray[0]; 
-      }
+    if (pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority && caso==1){
+      aux->heapArray[0] = pq->heapArray[(darthvader-1)/2];
+      pq->heapArray[(darthvader-1)/2]=pq->heapArray[k];
+      pq->heapArray[k] = aux->heapArray[0]; 
     }
+    
   }
 }
 
@@ -48,7 +47,7 @@ void heap_push(Heap* pq, void* data, int priority){
   }
   pq->heapArray[pq->size].data=data;
   pq->heapArray[pq->size].priority=priority;
-  swap(pq);
+  swap(pq, 0);
   pq->size++;
 }
 
@@ -60,7 +59,7 @@ void heap_pop(Heap* pq){
   }
   else{
     pq->heapArray[0].priority=0;
-    swap(pq);
+    swap(pq, 1);
     pq->size--;
   }
 }
