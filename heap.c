@@ -31,9 +31,8 @@ void prioritycorrect(Heap* pq){
       return;
     }
     if(pq->heapArray[k].priority>pq->heapArray[k-3].priority){
-      
-      aux->heapArray[0] = pq->heapArray[k-1];
-      pq->heapArray[k-1]=pq->heapArray[k];
+      aux->heapArray[0] = pq->heapArray[k-3];
+      pq->heapArray[k-3]=pq->heapArray[k];
       pq->heapArray[k] = aux->heapArray[0];
     }
   }
