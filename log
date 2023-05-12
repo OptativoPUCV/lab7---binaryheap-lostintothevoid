@@ -193,3 +193,16 @@ Fri 12 May 2023 04:03:06 AM UTC:
  tests:  2|2
 total_score: 20/70
 0dd10b9
+Fri 12 May 2023 04:06:30 AM UTC: 
+ heap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘prioritycorrect’:
+heap.c:29:24: error: invalid operands to binary == (have ‘heapElem’ {aka ‘struct nodo’} and ‘heapElem’ {aka ‘struct nodo’})
+   29 |     if(pq->heapArray[k]==pq->heapArray[0]){
+      |        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+      |                     |                 |
+      |                     |                 heapElem {aka struct nodo}
+      |                     heapElem {aka struct nodo}
+Compilation failed
+f54b931
