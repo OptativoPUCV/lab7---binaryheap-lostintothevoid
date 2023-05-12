@@ -26,7 +26,7 @@ void* heap_top(Heap* pq){
 void prioritycorrect(Heap* pq){
   Heap* aux=createHeap();
   for(int k=pq->size; k!=0; k--){
-    if(pq->heapArray[k]==pq->heapArray[0]){
+    if(pq->heapArray[k].priority==pq->heapArray[0].priority){
       pq->size++;
       return;
     }

@@ -206,3 +206,9 @@ heap.c:29:24: error: invalid operands to binary == (have ‘heapElem’ {aka ‘
       |                     heapElem {aka struct nodo}
 Compilation failed
 f54b931
+Fri 12 May 2023 04:07:27 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+a11b1be
