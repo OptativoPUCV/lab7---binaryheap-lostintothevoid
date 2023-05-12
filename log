@@ -260,3 +260,17 @@ Fri 12 May 2023 12:30:43 PM UTC:
  tests:  7|1
 total_score: 55/70
 3a0babd
+Fri 12 May 2023 12:40:43 PM UTC: 
+ heap.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘swap’:
+heap.c:36:79: error: expected ‘)’ before ‘{’ token
+   36 |       if ((pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority){
+      |          ~                                                                    ^
+      |                                                                               )
+heap.c:41:5: error: expected expression before ‘}’ token
+   41 |     }
+      |     ^
+Compilation failed
+3164431
