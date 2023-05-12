@@ -92,3 +92,13 @@ heap.c:21:23: error: incompatible types when initializing type ‘heapElem *’ 
       |                       ^~
 Compilation failed
 e48ecf1
+Fri 12 May 2023 03:02:38 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:21:3: error: cannot convert to a pointer type
+   21 |   heapElem* paquete =(heapElem*) pq->heapArray[0];
+      |   ^~~~~~~~
+Compilation failed
+a667b06
