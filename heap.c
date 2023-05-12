@@ -23,7 +23,18 @@ void* heap_top(Heap* pq){
   else return pq->heapArray[0].data;
 }
 
-
+void prioritycorrect(Heap* pq){
+  Heap* aux=createHeap();
+  for(int k=pq->size; k>0; k--){
+    if(pq->heapArray[k].priority>pq->heapArray[k-1].priority){
+      
+      aux->heapArray[0] = pq->heapArray[k-1];
+      pq->heapArray[k-1]=pq->heapArray[k];
+      pq->heapArray[k] = aux->heapArray[0];
+    }
+  }
+  pq->size++;
+}
 
 void heap_push(Heap* pq, void* data, int priority){
   if(pq->size==pq->capac){
@@ -32,7 +43,7 @@ void heap_push(Heap* pq, void* data, int priority){
   }
   pq->heapArray[pq->size].data=data;
   pq->heapArray[pq->size].priority=priority;
-  pq->size++;
+  prioritycorrect(pq);
 }
 
 
