@@ -102,3 +102,13 @@ heap.c:21:3: error: cannot convert to a pointer type
       |   ^~~~~~~~
 Compilation failed
 a667b06
+Fri 12 May 2023 03:07:53 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:22:23: error: incompatible types when initializing type ‘heapElem *’ {aka ‘struct nodo *’} using type ‘heapElem’ {aka ‘struct nodo’}
+   22 |   heapElem* paquete = pq->heapArray[0];
+      |                       ^~
+Compilation failed
+83df007

@@ -18,8 +18,8 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-  heapElem* paquete =(heapElem*) pq->heapArray[0];
-  if(paquete->data==NULL) return NULL;
+  if(pq->size==0) return NULL;
+  heapElem* paquete = pq->heapArray[0];
   return paquete->data;
 }
 
@@ -39,5 +39,6 @@ Heap* createHeap(){
   aux->capac=3;
   aux->size=0;
   aux->heapArray= (heapElem*) malloc(sizeof(heapElem)*aux->capac);
+  
   return aux;
 }
