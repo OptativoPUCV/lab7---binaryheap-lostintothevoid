@@ -38,3 +38,13 @@ heap.c:21:22: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka
       |                      ^~
 Compilation failed
 b850729
+Fri 12 May 2023 02:58:20 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:21:23: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   21 |   if(!pq->heapArray[0]->data) return NULL;
+      |                       ^~
+Compilation failed
+32cbadc
