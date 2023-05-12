@@ -18,8 +18,7 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-  if(pq->size==0 || pq==NULL) 
-    return NULL;
+  if(pq->size==0 || pq==NULL) return NULL;
   else return pq->heapArray[0].data;
 }
 
@@ -32,7 +31,7 @@ void swap(Heap* pq){
       pq->heapArray[(k-1)/2]=pq->heapArray[k];
       pq->heapArray[k] = aux->heapArray[0];
     }
-    else{
+    else{ 
       if ((pq->heapArray[k].priority>pq->heapArray[(darthvader-1)/2].priority){
         aux->heapArray[0] = pq->heapArray[(darthvader-1)/2];
         pq->heapArray[(darthvader-1)/2]=pq->heapArray[k];
